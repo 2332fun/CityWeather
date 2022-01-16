@@ -23,17 +23,25 @@ body {
 
 #searchForCity h2 {
     text-align: center;
+    margin: 5px;
 }
 
 #searched {
-    background-color: black;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
+    margin-left: 5px;
 }
 
 #searchBtn {
     background-color: rgb(101, 165, 238);
-    width: 100%;
     margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    border-radius: 10px;
+    margin-left: 10px;
 }
 
 #btns button{
@@ -89,12 +97,6 @@ body {
     padding-top: 2px;
 }
 
-/*end of display CSS*/
-
-footer {
-    width: 100%;
-}
-
 #displaySearch {
     padding-top: 10px;
     padding-left: 10px;
@@ -103,4 +105,4 @@ footer {
 #nameDate h2 {
     margin: 0;
 }
-
+/*end of display CSS*/
