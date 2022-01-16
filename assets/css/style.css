@@ -1,0 +1,48 @@
+header {
+    background: rgb(2,0,36);
+    background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    text-align: center;
+    color: white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    flex: 0 0 100%;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#btns button{
+    background-color: #929996; /* grey background */
+    border: 1px solid grey; /* grey border */
+    border-radius: 10px;
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    margin: 10px;
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    display: block; /* Make the buttons appear below each other */
+}
+
+#btns button:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+
+#btns button:hover {
+    background-color: #cbcfcd;
+}
+
+#displayMain {
+    margin-top: 30px;
+    margin-left: 30px;
+    background-color: blue;
+    border: black 1px solid;
+    align-self: flex-start;
+    flex: 50%;
+}
+
+#display5 {
+    background-color: green;
+    columns: 5;
+}

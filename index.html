@@ -14,6 +14,93 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city-->
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>City Weather</title>
+</head>
+
+<header>
+    <h1>Weather Dashboard</h1>
+</header>
+<body>
+    <section id="searchforcity">
+        <h2>Search for a City:</h2>
+        <textarea>
+            City Name
+        </textarea>
+        <button id="searchBtn">
+            Search
+        </button>
+        <div id="btns">
+            <button id="austin">Austin</button>
+            <button id="chicago">Chicago</button>
+            <button id="newYork">New York</button>
+            <button id="orlando">Orlando</button>
+            <button id="sanFrancisco">San Francisco</button>
+            <button id="seattle">Seattle</button>
+            <button id="denver">Denver</button>
+            <button id="atlanta">Atlanta</button>
+        </div>
+    </section>
+    <section id="displayMain">
+        <div id="displaySearch">
+            <div id="nameDate">Atlanta (3/30/2021)</div>
+            <div id="temp">Temp: 74.01°F</div>
+            <div id="wind">Wind: 6.67 MPH</div>
+            <div id="humidity">Humidity: 46%</div>
+            <div id="uv">UV Index: 0.47</div>
+        </div>
+    </section>
+    <section id="display5">
+        <div id="5day">
+            <div id="day1">
+                date
+                symbol
+                temp
+                wind
+                humidity
+            </div>
+            <div id="day2">
+                date
+                symbol
+                temp
+                wind
+                humidity
+            </div>
+            <div id="day3">
+                date
+                symbol
+                temp
+                wind
+                humidity
+            </div>
+            <div id="day4">
+                date
+                symbol
+                temp
+                wind
+                humidity
+            </div>
+            <div id="day5">
+                date
+                symbol
+                temp
+                wind
+                humidity
+            </div>
+        </div>
+    </section>
+    <script src="assets/js/script.js"></script>
+</body>
+<footer>
+    Footer
+</footer>
 <!--
 Header: Weather Dashboard
 gradient left to right light blue-dark blue background
