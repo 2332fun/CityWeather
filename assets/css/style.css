@@ -13,6 +13,29 @@ body {
     flex-wrap: wrap;
 }
 
+/*start of Search & Buttons CSS*/
+#searchForCity {
+    display: block;
+    flex-wrap: wrap;
+    width: 25%;
+    margin-right: 5%;
+}
+
+#searchForCity h2 {
+    text-align: center;
+}
+
+#searched {
+    background-color: black;
+    width: 100%;
+}
+
+#searchBtn {
+    background-color: rgb(101, 165, 238);
+    width: 100%;
+    margin-top: 10px;
+}
+
 #btns button{
     background-color: #929996; /* grey background */
     border: 1px solid grey; /* grey border */
@@ -32,17 +55,52 @@ body {
 #btns button:hover {
     background-color: #cbcfcd;
 }
+/*end of Search & Buttons CSS*/
+/*start of display CSS*/
+
+#displays {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+}
 
 #displayMain {
     margin-top: 30px;
-    margin-left: 30px;
-    background-color: blue;
+    margin-bottom: 30px;
+    background-color: white;
     border: black 1px solid;
-    align-self: flex-start;
-    flex: 50%;
+    width: 100%;
 }
 
 #display5 {
-    background-color: green;
     columns: 5;
+    min-width: 100%;
+    min-height: 100px;
+    color: white;
 }
+
+#fiveDay {
+    border: 1px white solid;
+    background-color: rgb(93, 95, 128);
+    padding-left: 10px;
+}
+
+#day1, #day2, #day3, #day4, #day5 {
+    padding-top: 2px;
+}
+
+/*end of display CSS*/
+
+footer {
+    width: 100%;
+}
+
+#displaySearch {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#nameDate h2 {
+    margin: 0;
+}
+

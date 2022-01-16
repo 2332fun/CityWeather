@@ -29,14 +29,14 @@ THEN I am again presented with current and future conditions for that city-->
     <h1>Weather Dashboard</h1>
 </header>
 <body>
-    <section id="searchforcity">
-        <h2>Search for a City:</h2>
-        <textarea>
-            City Name
-        </textarea>
-        <button id="searchBtn">
-            Search
-        </button>
+    <section id="searchForCity">
+        <div id="searchForm">
+            <h2>Search for a City:</h2>
+                <form>
+                    <input type="text" id="searched" name="searched"><br>
+                    <input type="submit" value="Search" id="searchBtn">
+                </form>
+        </div>
         <div id="btns">
             <button id="austin">Austin</button>
             <button id="chicago">Chicago</button>
@@ -48,9 +48,12 @@ THEN I am again presented with current and future conditions for that city-->
             <button id="atlanta">Atlanta</button>
         </div>
     </section>
+    <section id="displays">
     <section id="displayMain">
         <div id="displaySearch">
-            <div id="nameDate">Atlanta (3/30/2021)</div>
+            <div id="nameDate">
+                <h2>Atlanta (3/30/2021)</h2>
+            </div>
             <div id="temp">Temp: 74.01°F</div>
             <div id="wind">Wind: 6.67 MPH</div>
             <div id="humidity">Humidity: 46%</div>
@@ -58,44 +61,45 @@ THEN I am again presented with current and future conditions for that city-->
         </div>
     </section>
     <section id="display5">
-        <div id="5day">
+        <div id="fiveDay">
             <div id="day1">
-                date
-                symbol
-                temp
-                wind
-                humidity
+                <p id="date1">date</p>
+                <p id="symbol1">symbol</p>
+                <p id="temp1">temp</p>
+                <p id="wind1">wind</p>
+                <p id="humidity1">humnidity</p>
             </div>
             <div id="day2">
-                date
-                symbol
-                temp
-                wind
-                humidity
+                <p id="date2">date</p>
+                <p id="symbol2">symbol</p>
+                <p id="temp2">temp</p>
+                <p id="wind2">wind</p>
+                <p id="humidity2">humnidity</p>
             </div>
             <div id="day3">
-                date
-                symbol
-                temp
-                wind
-                humidity
+                <p id="date3">date</p>
+                <p id="symbol3">symbol</p>
+                <p id="temp3">temp</p>
+                <p id="wind3">wind</p>
+                <p id="humidity3">humnidity</p>
             </div>
             <div id="day4">
-                date
-                symbol
-                temp
-                wind
-                humidity
+                <p id="date4">date</p>
+                <p id="symbol4">symbol</p>
+                <p id="temp4">temp</p>
+                <p id="wind4">wind</p>
+                <p id="humidity4">humnidity</p>
             </div>
             <div id="day5">
-                date
-                symbol
-                temp
-                wind
-                humidity
+                <p id="date5">date</p>
+                <p id="symbol5">symbol</p>
+                <p id="temp5">temp</p>
+                <p id="wind5">wind</p>
+                <p id="humidity5">humnidity</p>
             </div>
         </div>
     </section>
+</section>
     <script src="assets/js/script.js"></script>
 </body>
 <footer>
