@@ -44,7 +44,7 @@ body {
     margin-left: 10px;
 }
 
-#btns button{
+.btns button{
     background-color: #929996; /* grey background */
     border: 1px solid grey; /* grey border */
     border-radius: 10px;
@@ -56,11 +56,11 @@ body {
     display: block; /* Make the buttons appear below each other */
 }
 
-#btns button:not(:last-child) {
+.btns button:not(:last-child) {
     border-bottom: none; /* Prevent double borders */
   }
 
-#btns button:hover {
+.btns button:hover {
     background-color: #cbcfcd;
 }
 /*end of Search & Buttons CSS*/

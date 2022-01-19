@@ -1,8 +1,12 @@
-//User inputs search bar, replaces keyword= with input
+//Global Variables
 var searchBtn = document.querySelector('#searchBtn');
 var searchInputEl = document.querySelector('#search-box');
 var searchInput = searchInputEl.value;
+var displaySearch = document.querySelector('#displaySearch');
+var searchHistory = document.querySelector('#searchHistory');
+let searchHistoryBtns = [];
 
+//function executed upon submitting input
 var searchCall = function (event) {
     event.preventDefault();
     searchHistoryFunction();
@@ -39,43 +43,27 @@ var searchCall = function (event) {
 
 };
 
-searchBtn.addEventListener("click", searchCall);
+//Upon search submit; stores recent searches for display.
+var searchHistoryFunction = function() {
+    document.querySelector('#searchHistory').innerHTML = '';
+    if (searchHistoryBtns.length >= 7) {
+        // Drops the oldest search History and replaces it with the newest one.
+        searchHistoryBtns.shift();
+    }
+    searchHistoryBtns.push(searchInputEl.value);
+    for (var i = 0; i < searchHistoryBtns.length; i++) {
+        localStorage.setItem("historyItem" + i, searchHistoryBtns[i]);
+        localStorage.getItem("historyItem" + i);
+        let btn = document.createElement("button");
+        btn.textContent = searchHistoryBtns[i];
+        searchHistory.append(btn);
+    }
+};
 
+searchBtn.addEventListener("click", searchCall);
+//Allows user to hit enter instead of clicking button to submit input
 $("#search-box").keyup(function (event) {
     if (event.keyCode === 13) {
         $("#search-btn").click();
     }
 });
-var displaySearch = document.querySelector('#displaySearch');
-var searchHistory = document.querySelector('.searchHistory');
-
-var searchHistoryFunction = function(event) {
-    event.preventDefault();
-    document.querySelector('.searchHistory').innerHTML = '';
-    const searchHistoryBtns = ["historyBtn1", "historyBtn2", "historyBtn3", "historyBtn4", "historyBtn5", "historyBtn6", "historyBtn7"];
-    console.log(searchHistoryBtns.length);
-
-    for (var i = 0; i < searchHistoryBtns.length; i++)
-
-        if (searchHistoryBtns[0]) {
-            localStorage.setItem("historyItem1", searchInputEl.value);
-            localStorage.getItem("historyItem1");
-            searchHistoryBtns[0] = document.createElement("button");
-            searchHistoryBtns[0].textContent = searchInputEl.value;
-            searchHistory.append(searchHistoryBtns[0]);
-            console.log(searchHistoryBtns[0]);
-            searchHistoryBtns.length += 1;
-        }
-        if (searchHistoryBtns[1]) {
-            localStorage.setItem("historyItem1", searchInputEl.value);
-            localStorage.getItem("historyItem1");
-            searchHistoryBtns[1] = document.createElement("button");
-            searchHistoryBtns[1].textContent = searchInputEl.value;
-            searchHistory.append(searchHistoryBtns[1]);
-            console.log(searchHistoryBtns[1]);
-            searchHistoryBtns.length += 1;
-        }
-
-};
-
-searchHistoryFunction();
