@@ -1,10 +1,6 @@
-<!--AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
 
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
+<!--
+    THEN I am presented with current and future conditions for that city and that city is added to the search history
 WHEN I view current weather conditions for that city
 THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 WHEN I view the UV index
@@ -37,15 +33,8 @@ THEN I am again presented with current and future conditions for that city-->
                     <input type="submit" value="Search" id="searchBtn">
                 </form>
         </div>
-        <div id="btns">
-            <button id="austin">Austin</button>
-            <button id="chicago">Chicago</button>
-            <button id="newYork">New York</button>
-            <button id="orlando">Orlando</button>
-            <button id="sanFrancisco">San Francisco</button>
-            <button id="seattle">Seattle</button>
-            <button id="denver">Denver</button>
-            <button id="atlanta">Atlanta</button>
+        <div id="btns" class="searchHistory">
+
         </div>
     </section>
     <section id="displays">
@@ -103,9 +92,6 @@ THEN I am again presented with current and future conditions for that city-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
-<footer>
-    Footer
-</footer>
 <!--
 Header: Weather Dashboard
 gradient left to right light blue-dark blue background
