@@ -1,21 +1,19 @@
 //User inputs search bar, replaces keyword= with input
 var searchBtn = document.querySelector('#searchBtn');
-var getUserInput = function () {
-    return document.querySelector('#search-box').value;
-};
+var searchInputEl = document.querySelector('#search-box');
+var searchInput = searchInputEl.value;
 
 var searchCall = function (event) {
     event.preventDefault();
     searchHistoryFunction();
-    var searchInputEl = document.querySelector('#search-box');
-    var searchInput = searchInputEl.value;
+
     document.querySelector('#displaySearch').innerHTML = '';
 
     fetch(`https://api.openweathermap.org/data/2.5/onecall?timezone=${searchInput}&exclude=hourly,daily&appid={7dbc84f7c262272b1b3286380cc36962}`)
         .then(response => response.json())
 
         .then(function (data) {
-            console.log(data)
+            console.log(data);
             //FIX FOR ONE CALL API; NO TOTALELEMENTS
             if (data.page.totalElements === 0) {
                 displaySearch.textContent = 'No results found';
@@ -37,9 +35,9 @@ var searchCall = function (event) {
                 searchEl.append(searchH5El);
                 searchEl.append(searchImgEl);
             }
-        })
+        });
 
-}
+};
 
 searchBtn.addEventListener("click", searchCall);
 
@@ -51,43 +49,33 @@ $("#search-box").keyup(function (event) {
 var displaySearch = document.querySelector('#displaySearch');
 var searchHistory = document.querySelector('.searchHistory');
 
-
-
-var searchHistoryFunction = function() {
+var searchHistoryFunction = function(event) {
+    event.preventDefault();
     document.querySelector('.searchHistory').innerHTML = '';
     const searchHistoryBtns = ["historyBtn1", "historyBtn2", "historyBtn3", "historyBtn4", "historyBtn5", "historyBtn6", "historyBtn7"];
     console.log(searchHistoryBtns.length);
 
-    var searchInputEl = document.querySelector('#search-box');
+    for (var i = 0; i < searchHistoryBtns.length; i++)
 
-    var historyBtn1 = document.createElement("button");
-    historyBtn1.textContent = searchInputEl.value;
-    searchHistory.append(historyBtn1);
+        if (searchHistoryBtns[0]) {
+            localStorage.setItem("historyItem1", searchInputEl.value);
+            localStorage.getItem("historyItem1");
+            searchHistoryBtns[0] = document.createElement("button");
+            searchHistoryBtns[0].textContent = searchInputEl.value;
+            searchHistory.append(searchHistoryBtns[0]);
+            console.log(searchHistoryBtns[0]);
+            searchHistoryBtns.length += 1;
+        }
+        if (searchHistoryBtns[1]) {
+            localStorage.setItem("historyItem1", searchInputEl.value);
+            localStorage.getItem("historyItem1");
+            searchHistoryBtns[1] = document.createElement("button");
+            searchHistoryBtns[1].textContent = searchInputEl.value;
+            searchHistory.append(searchHistoryBtns[1]);
+            console.log(searchHistoryBtns[1]);
+            searchHistoryBtns.length += 1;
+        }
 
-    var historyBtn2 = document.createElement("button");
-    historyBtn2.textContent = searchInputEl.value;
-    searchHistory.append(historyBtn2);
-
-    var historyBtn3 = document.createElement("button");
-    historyBtn3.textContent = searchInputEl.value;
-    searchHistory.append(historyBtn3);
-
-    var historyBtn4 = document.createElement("button");
-    historyBtn4.textContent = searchInputEl.value;
-    searchHistory.append(historyBtn4);
-
-    var historyBtn5 = document.createElement("button");
-    historyBtn5.textContent = searchInputEl.value;
-    searchHistory.append(historyBtn5);
-
-    var historyBtn6 = document.createElement("button");
-    historyBtn6.textContent = searchInputEl.value;
-    searchHistory.append(historyBtn6);
-
-    var historyBtn7 = document.createElement("button");
-    historyBtn7.textContent = searchInputEl.value;
-    searchHistory.append(historyBtn7);
-
-}
+};
 
 searchHistoryFunction();
