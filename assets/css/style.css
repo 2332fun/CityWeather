@@ -66,6 +66,9 @@ body {
 /*end of Search & Buttons CSS*/
 /*start of display CSS*/
 
+#displaySearchH2 {
+    margin: 0px;
+}
 #displays {
     display: flex;
     flex-wrap: wrap;
