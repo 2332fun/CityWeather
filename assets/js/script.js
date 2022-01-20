@@ -10,39 +10,55 @@ let searchHistoryBtns = [];
 var searchCall = function (event) {
     event.preventDefault();
     searchHistoryFunction();
+    var searchInputEl = document.querySelector('#search-box');
+    var searchInput = searchInputEl.value;
 
     document.querySelector('#displaySearch').innerHTML = '';
 
-    fetch(`https://api.openweathermap.org/data/2.5/onecall?q=${searchInput}&appid=7dbc84f7c262272b1b3286380cc36962`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=7dbc84f7c262272b1b3286380cc36962`)
         .then(response => response.json())
 
         .then(function (data) {
 
-            
-                //FIX TO FIT ONE CALL API INFO: TEMP, WIND, HUMIDITY, UV
                 var displaySearchEl = document.createElement("div");
-
                 var displaySearchAEl = document.createElement("a");
-                // displaySearchAEl.setAttribute("href", data._embedded.attractions[i].url);
-                // displaySearchAEl.setAttribute("target", "_blank");
-
 
                 var displaySearchH2El = document.createElement("h2");
                 displaySearchH2El.setAttribute("id", "displaySearchH2");
                 displaySearchH2El.textContent = searchInputEl.value;
 
+                var tempEl = document.createElement("div");
+                tempEl.setAttribute("id", "temp");
+                tempEl.setAttribute("class", "displayText");
+                tempEl.textContent = "Temp: " + "temp data goes here" + "°F";
+
+                var windEl = document.createElement("div");
+                windEl.setAttribute("id", "wind");
+                windEl.setAttribute("class", "displayText");
+                windEl.textContent = "Wind: " + "wind data goes here" + " MPH";
+
+                var humidityEl = document.createElement("div");
+                humidityEl.setAttribute("id", "humidity");
+                humidityEl.setAttribute("class", "displayText");
+                humidityEl.textContent = "Humidity: " + "humidity data goes here" + "%";
+
+                var uvEl = document.createElement("div");
+                uvEl.setAttribute("id", "UV");
+                uvEl.setAttribute("class", "displayText");
+                uvEl.textContent = "UV Index: " + "UV data goes here";
 
                 var displaySearchImgEl = document.createElement("img");
                 displaySearchImgEl.setAttribute("class", "Symbol");
-                // displaySearchImgEl.setAttribute("src", data._embedded.attractions[i].images[0].url);
 
                 displaySearch.append(displaySearchAEl);
                 displaySearchAEl.append(displaySearchEl);
+                humidityEl.append(uvEl);
+                windEl.append(humidityEl);
+                tempEl.append(windEl);
+                displaySearchH2El.append(tempEl);
                 displaySearchEl.append(displaySearchH2El);
                 displaySearchEl.append(displaySearchImgEl);
-            
         });
-
 };
 
 //Upon search submit; stores recent searches for display.
