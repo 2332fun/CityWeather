@@ -105,6 +105,11 @@ body {
     padding-top: 2px;
 }
 
+.fiveDayText {
+    font-size: 16px;
+    font-weight: normal;
+}
+
 #displaySearch {
     padding-top: 10px;
     padding-left: 10px;

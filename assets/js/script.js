@@ -12,14 +12,21 @@ var searchCall = function (event) {
     searchHistoryFunction();
     var searchInputEl = document.querySelector('#search-box');
     var searchInput = searchInputEl.value;
+    // if (historyCall) {
+    //     var searchInput = searchHistorybtn.value;
+    // }
+    // else {
+    //     var searchInput = searchInputEl.value;
+    // }
 
     document.querySelector('#displaySearch').innerHTML = '';
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=7dbc84f7c262272b1b3286380cc36962`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&units=imperial&appid=7dbc84f7c262272b1b3286380cc36962`)
         .then(response => response.json())
 
         .then(function (data) {
 
+            //start of displayMain code
                 var displaySearchEl = document.createElement("div");
                 var displaySearchAEl = document.createElement("a");
 
@@ -30,17 +37,17 @@ var searchCall = function (event) {
                 var tempEl = document.createElement("div");
                 tempEl.setAttribute("id", "temp");
                 tempEl.setAttribute("class", "displayText");
-                tempEl.textContent = "Temp: " + "temp data goes here" + "°F";
+                tempEl.textContent = "Temp: " + data.main.temp + "°F";
 
                 var windEl = document.createElement("div");
                 windEl.setAttribute("id", "wind");
                 windEl.setAttribute("class", "displayText");
-                windEl.textContent = "Wind: " + "wind data goes here" + " MPH";
+                windEl.textContent = "Wind: " + data.wind.speed + " MPH";
 
                 var humidityEl = document.createElement("div");
                 humidityEl.setAttribute("id", "humidity");
                 humidityEl.setAttribute("class", "displayText");
-                humidityEl.textContent = "Humidity: " + "humidity data goes here" + "%";
+                humidityEl.textContent = "Humidity: " + data.main.humidity + "%";
 
                 var uvEl = document.createElement("div");
                 uvEl.setAttribute("id", "UV");
@@ -58,6 +65,24 @@ var searchCall = function (event) {
                 displaySearchH2El.append(tempEl);
                 displaySearchEl.append(displaySearchH2El);
                 displaySearchEl.append(displaySearchImgEl);
+                //end of displayMain code
+
+                //start of display5 code
+                // var display5El = document.createElement ("div");
+                // var display5AEl = document.createElement ("a");
+
+                // var day1El = document.createElement("div");
+                // day1El.setAttribute("id", "day1");
+
+                // var date1El = document.createElement("p");
+                // date1El.setAttribute("id", "date1");
+                // date1El.setAttribute("class", "fiveDayText");
+                // date1El.textContent = "Date: " + "date1 data goes here";
+
+                // display5.append(display5AEl);
+                // display5AEl.append(display5El);
+                // display5El.append(date1El);
+                //end of display5 code
         });
 };
 
@@ -77,6 +102,8 @@ var searchHistoryFunction = function() {
         searchHistory.append(btn);
     }
 };
+
+// historyBtn.addEventListener("click", historyCall);
 
 searchBtn.addEventListener("click", searchCall);
 //Allows user to hit enter instead of clicking button to submit input
