@@ -90,23 +90,52 @@ var oneCall = function (lat, lon, city) {
 
             for (var i=1; i<6; i++){
                 //create the card
-                var day1El = document.createElement("div");
-                day1El.setAttribute("id", "day1");
+                var dayEl = document.createElement("div");
+                dayEl.setAttribute("id", "day");
                 //create all elements in the card   
-               var date1El = document.createElement("p");
-               date1El.setAttribute("id", "date1");
+                var dateEl = document.createElement("p");
+                dateEl.setAttribute("id", "date");
                 //give elements any classes that you want
-               date1El.setAttribute("class", "fiveDayText");
+                dateEl.setAttribute("class", "fiveDayText");
                 //give elements text content
-                //moment.js
-               date1El.textContent = "Date: " + data.daily[i].humidity;
+                //replace humidity with moment.js
+                dateEl.textContent = "Date: " + data.daily[i].humidity;
                 //apend elements to card
                 //append card to page
-               day1El.append(date1El);
-                fiveDay.append(day1El);
-            // <div id="day1">
-            //     <p id="date1">date</p>
-            //     <p id="symbol1">symbol</p>
+                dayEl.append(dateEl);
+                fiveDay.append(dayEl);
+
+                var symbolEl = document.createElement("img");
+                symbolEl.setAttribute("id", "symbol");
+                symbolEl.setAttribute("class", "fiveDayText");
+                var symbolUrl = "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png";
+                symbolEl.setAttribute("src", symbolUrl);
+                dateEl.append(symbolEl);
+
+                var tempEl = document.createElement("div");
+                tempEl.setAttribute("id", "temp5");
+                tempEl.setAttribute("class", "displayText");
+                tempEl.textContent = "Temp: " + data.daily[i].temp.day + "°F";
+                dateEl.append(tempEl);
+    
+                var windEl = document.createElement("div");
+                windEl.setAttribute("id", "wind5");
+                windEl.setAttribute("class", "displayText");
+                windEl.textContent = "Wind: " + data.daily[i].wind_speed + " MPH";
+                dateEl.append(windEl);
+    
+                var humidityEl = document.createElement("div");
+                humidityEl.setAttribute("id", "humidity5");
+                humidityEl.setAttribute("class", "displayText");
+                humidityEl.textContent = "Humidity: " + data.daily[i].humidity + "%";
+                dateEl.append(humidityEl);
+    
+                var uvEl = document.createElement("div");
+                uvEl.setAttribute("id", "UV5");
+                uvEl.setAttribute("class", "displayText");
+                uvEl.textContent = "UV Index: " + data.daily[i].uvi;
+                dateEl.append(uvEl);
+                
             //     <p id="temp1">temp</p>
             //     <p id="wind1">wind</p>
             //     <p id="humidity1">humidity</p>
