@@ -44,7 +44,7 @@ var oneCall = function (lat, lon, city) {
             //moment.js for today's date
             var displaySearchH2El = document.createElement("h2");
             displaySearchH2El.setAttribute("id", "displaySearchH2");
-            displaySearchH2El.textContent = city + " moment.js insert here";
+            displaySearchH2El.textContent = city + " (" + moment().format('MMMM Do YYYY') + ")";
 
             var tempEl = document.createElement("div");
             tempEl.setAttribute("id", "temp");
@@ -92,9 +92,11 @@ var oneCall = function (lat, lon, city) {
                 dateEl.setAttribute("id", "date");
                 //give elements any classes that you want
                 dateEl.setAttribute("class", "fiveDayText");
+
                 //give elements text content
-                //replace humidity with moment.js
-                dateEl.textContent = "Date: " + "moment.js insert here";
+                //use moment.js to display 5 days
+                dateEl.textContent = "Date: " + moment().add(1, 'days').format('MM/DD/YYYY');
+
                 //apend elements to card
                 //append card to page
                 dayEl.append(dateEl);
