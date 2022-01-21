@@ -1,10 +1,10 @@
-# Music Dashboard
+# City Weather
 
 ## Description
 
-What: Our motivation for this project was to provide a dashboard where a user could look up their favorite artist and see that artists' latest social media and upcoming events. Our efforts have allowed the user to type in their favorite artist's name and see results from youtube, spotify, twitter, and instagram, along with events shown through the ticketmaster API. We learned how to use APIs, Fetch in javascript, and use Materialize for the CSS. Our project should stand out as efficient in displaying the wanted information.
+What: My motivation for this project was to provide a quick weather report of key information regarding the user's cities of preference. My efforts have allowed the user to type in their city and see results using OneCall and Current Weather API. I learned how to implement 2 similar APIs to pull the weather data. My project should stand out as efficient in displaying the wanted information.
 
-![Music Dashboard](./assets/images/screenshot.PNG "Screenshot")
+![City Weather](./assets/images/screenshot.PNG "Screenshot")
 
 ## Table of Contents
 
@@ -19,15 +19,13 @@ What: Our motivation for this project was to provide a dashboard where a user co
 
 ## Installation
 
-No installation required. Follow the link listed under Usage below or in the Description above.
+No installation required. Follow the link listed under Usage below.
 
 ## Usage
 
-* [Link to Webpage](https://mtornabene05.github.io/music-dashboard/)
+* [Link to Webpage](https://2332fun.github.io/CityWeather/)
 
-To use Music Dashboard, simply type in the name of the artists in the search bar, shown in the following screenshot: 
-
-By clicking the search button or hitting enter, the news section will be populated with five of the most salient articles about the artist. The dashboard will only display the headline and a short summary of the article, but the user can click the "source" link to be taken to the source page of the full article.
+To use City Weather, simply type in the name of the city in the search bar, seen on the left-hand side of the screen. By clicking the search button or hitting enter, the current weather as well as the next 5 days of weather are displayed on the right side of the screen.
 
 ## Credits
 
@@ -35,6 +33,8 @@ By clicking the search button or hitting enter, the news section will be populat
 * [License Link](https://choosealicense.com/licenses/mit/): Used to determine and copy the correct license for the project found in License below and the LICENSE.txt file.
 * [Contributor Covenant Link](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md): Used to obtain a proper code of conduct for contribution found in Contributing below.
 * [Markdown Guide](https://www.markdownguide.org/basic-syntax/): Used to setup the format of the README.md.
+* [OneCall API](https://openweathermap.org/api/one-call-api): Used in the JS to call data for weather.
+* [CurrentWeather API](https://openweathermap.org/current): Used to bypass the needs of lat/long for easier user interaction.
 
 ## License
 
@@ -67,7 +67,7 @@ SOFTWARE.
 
 ## Features
 
-The website has a searchbar that allows the user to type in their own input for the artist's name, followed by a choice of clicking Search or hitting Enter on their keyboard to see results. The website hides the Ticketmaster and NewsApi sections until the user inputs an artists' name for the first time to streamline the appearance of the webpage. The website uses 2 APIs; Ticketmaster for finding attractions, and NewsApi for finding news about the artist. The website will display a "no results found" if no data regarding the entered artist is found.
+The website has a searchbar that allows the user to type in their city, along with the ability to click on buttons showing cities they recently searched. The website uses 2 similar APIs; OneCall and CurrentWeather API (made by the same company). The UV severity is displayed with green, yellow, and red backgrounds.
 
 ## Contributing
 
