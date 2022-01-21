@@ -95,7 +95,7 @@ var oneCall = function (lat, lon, city) {
 
                 //give elements text content
                 //use moment.js to display 5 days
-                dateEl.textContent = "Date: " + moment().add(1, 'days').format('MM/DD/YYYY');
+                dateEl.textContent = "Date: " + moment().add(i, 'days').format('MM/DD/YYYY');
 
                 //apend elements to card
                 //append card to page
