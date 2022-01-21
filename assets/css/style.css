@@ -91,7 +91,7 @@ body {
 #display5 {
     columns: 5;
     min-width: 100%;
-    min-height: 100px;
+    min-height: 120px;
     color: white;
 }
 
@@ -99,10 +99,18 @@ body {
     border: 1px white solid;
     background-color: rgb(93, 95, 128);
     padding-left: 10px;
+    min-height: 120px;
+    padding-bottom: 18px;
 }
 
-#day1 {
-    padding-top: 2px;
+#day1, #day2, #day3, #day4, #day5 {
+    padding-top: 10px;
+}
+
+#date.fiveDayText {
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 .fiveDayText {
@@ -120,3 +128,20 @@ body {
     margin: 0;
 }
 /*end of display CSS*/
+
+/*start of UV severity CSS*/
+#UV5.UVfavorable {
+    background: green;
+    color: black;
+}
+
+#UV5.UVmoderate {
+    background: yellow;
+    color: black;
+}
+
+#UV5.UVsevere {
+    background: red;
+    color: black;
+}
+/*end of UV severity CSS*/

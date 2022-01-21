@@ -44,7 +44,7 @@ var oneCall = function (lat, lon, city) {
             //moment.js for today's date
             var displaySearchH2El = document.createElement("h2");
             displaySearchH2El.setAttribute("id", "displaySearchH2");
-            displaySearchH2El.textContent = city;
+            displaySearchH2El.textContent = city + " moment.js insert here";
 
             var tempEl = document.createElement("div");
             tempEl.setAttribute("id", "temp");
@@ -94,7 +94,7 @@ var oneCall = function (lat, lon, city) {
                 dateEl.setAttribute("class", "fiveDayText");
                 //give elements text content
                 //replace humidity with moment.js
-                dateEl.textContent = "Date: " + data.daily[i].humidity;
+                dateEl.textContent = "Date: " + "moment.js insert here";
                 //apend elements to card
                 //append card to page
                 dayEl.append(dateEl);
@@ -128,6 +128,17 @@ var oneCall = function (lat, lon, city) {
                 var uvEl = document.createElement("div");
                 uvEl.setAttribute("id", "UV5");
                 uvEl.setAttribute("class", "displayText");
+                var severity = data.daily[i].uvi;
+                if (severity < 3) {
+                    uvEl.setAttribute("class", "UVfavorable");
+                }
+                if (severity > 2 && severity < 6) {
+                    uvEl.setAttribute("class", "UVmoderate");
+                }
+                if (severity > 5) {
+                    uvEl.setAttribute("class", "UVsevere");
+                }
+
                 uvEl.textContent = "UV Index: " + data.daily[i].uvi;
                 dateEl.append(uvEl);
                 //end of display5 code
