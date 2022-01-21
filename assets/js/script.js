@@ -15,7 +15,6 @@ var searchCall = function (event) {
     currentWeatherAPI(searchInput);
 
     document.querySelector('#displaySearch').innerHTML = '';
-
 }
 
 var currentWeatherAPI = function (search) {
@@ -36,11 +35,7 @@ var oneCall = function (lat, lon, city) {
     fetch(oneCallKey)
         .then(response => response.json())
         .then(function (data) {
-
-            console.log(data)
-
             //start of displayMain code
-
             document.querySelector('#displaySearch').innerHTML = '';
 
             var displaySearchEl = document.createElement("div");
@@ -135,11 +130,7 @@ var oneCall = function (lat, lon, city) {
                 uvEl.setAttribute("class", "displayText");
                 uvEl.textContent = "UV Index: " + data.daily[i].uvi;
                 dateEl.append(uvEl);
-                
-            //     <p id="temp1">temp</p>
-            //     <p id="wind1">wind</p>
-            //     <p id="humidity1">humidity</p>
-            // </div>
+                //end of display5 code
             }
         })
 }
